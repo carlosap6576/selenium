@@ -2,9 +2,7 @@ package com.test;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class TestB {
 
@@ -14,12 +12,14 @@ public class TestB {
     public void setUp() {
         System.out.println("*******************");
         System.out.println("launching chrome browser");
-        driver = Browser.getBrowser("chrome");
+        driver = com.test.Browser.getBrowser("chrome");
         driver.manage().window().maximize();
     }
 
     @Test
-    public void testGooglePageTitleInChrome() {
+    @Parameters("browserName")
+    public void testGooglePageTitleInChrome(@Optional("chrome") String browserName) {
+        System.out.println("Parameterized value is : " + browserName);
         driver.navigate().to("http://www.google.com");
         String strPageTitle = driver.getTitle();
         Assert.assertTrue(strPageTitle.equalsIgnoreCase("Google"), "Page title doesn't match");
