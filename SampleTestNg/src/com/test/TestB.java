@@ -16,8 +16,8 @@ public class TestB {
         driver.manage().window().maximize();
     }
 
-    @Test
     @Parameters("browserName")
+    @Test
     public void testGooglePageTitleInChrome(@Optional("chrome") String browserName) {
         System.out.println("Parameterized value is : " + browserName);
         driver.navigate().to("http://www.google.com");
@@ -33,7 +33,9 @@ public class TestB {
         }
     }
 }
-
+//with paramters:
+//java -cp C:\Users\cperez\gocode\src\github.com\selenium\SampleTestNg\lib\*;C:\Users\cperez\gocode\src\github.com\selenium\SampleTestNg\bin -DbrowserName=firefox org.testng.TestNG testng.xml
+//with parameters from xml
 //C:\Users\cperez\gocode\src\github.com\selenium\SampleTestNg>java -cp C:\Users\cperez\gocode\src\github.com\selenium\SampleTestNg\lib\*;C:\Users\cperez\gocode\src\github.com\selenium\SampleTestNg\bin org.testng.TestNG testng.xml
 //        ...
 //        ... TestNG 6.14.3 by Cédric Beust (cedric@beust.com)

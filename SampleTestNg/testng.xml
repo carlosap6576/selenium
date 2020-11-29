@@ -3,8 +3,8 @@
 <suite name="Main Test Suite" verbose="2">
 
     <test name="Holland America Line Selinium Grid Test">
+<!--        <parameter name="browserName" value=""/>-->
          <classes>
-             <parameter name="browserName" value="Browser Name"/>
              <class name="com.test.TestB"/>
         </classes>
     </test>

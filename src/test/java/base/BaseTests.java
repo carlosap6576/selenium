@@ -25,11 +25,13 @@ public class BaseTests {
     @BeforeClass
     public void setUp() throws MalformedURLException {
         //https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/WebDriver.html
-//        System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
-//        driver = new ChromeDriver();
-        DesiredCapabilities caps = new DesiredCapabilities();
-        ChromeOptions chromeOptions = new ChromeOptions();
-        driver = new RemoteWebDriver(new URL(URL), chromeOptions);
+        System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
+        driver = new ChromeDriver();
+
+
+        //DesiredCapabilities caps = new DesiredCapabilities();
+        //ChromeOptions chromeOptions = new ChromeOptions();
+        //driver = new RemoteWebDriver(new URL(URL), chromeOptions);
         driver.get("https://the-internet.herokuapp.com");
         System.out.println(driver.getTitle());
 
